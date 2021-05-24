@@ -298,7 +298,8 @@ public class CliClientTest extends TestLogger {
         }
 
         // read the last executed statement
-        assertTrue(statements.get(hookIndex).contains(mockExecutor.receivedStatement));
+        String expected = "INSERT INTO \nMyOtherTable VALUES (1, 101), (2, 102)";
+        assertEquals(expected, mockExecutor.receivedStatement);
     }
 
     // --------------------------------------------------------------------------------------------
