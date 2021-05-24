@@ -63,7 +63,7 @@ public class CliStatementSplitterTest {
                                 + "  'connector' = 'values',\n"
                                 + "  'test-property' = 'test.value'\n);"
                                 + "-- Define Table;",
-                        "SET a = b;",
+                        "SET a = b; -- define set",
                         "\n" + "SELECT func(id) from MyTable\n;");
         List<String> actual = CliStatementSplitter.splitContent(String.join("\n", lines));
 
